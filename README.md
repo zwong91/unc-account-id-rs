@@ -1,4 +1,4 @@
-# near-account-id
+# unc-account-id
 
 This crate provides a type for representing a syntactically valid, unique account identifier on the [NEAR](https://near.org) network, according to the [NEAR Account ID](https://docs.near.org/concepts/basics/account#account-id-rules) rules.
 
@@ -9,7 +9,7 @@ This crate provides a type for representing a syntactically valid, unique accoun
 ## Usage
 
 ```rust
-use near_account_id::AccountId;
+use unc_account_id::AccountId;
 
 let alice: AccountId = "alice.near".parse()?;
 

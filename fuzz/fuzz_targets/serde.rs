@@ -3,7 +3,7 @@
 use std::str;
 
 use libfuzzer_sys::fuzz_target;
-use near_account_id::AccountId;
+use unc_account_id::AccountId;
 use serde_json::json;
 
 fuzz_target!(|bytes: &[u8]| {

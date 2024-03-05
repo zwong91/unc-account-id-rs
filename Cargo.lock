@@ -279,21 +279,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "near-account-id"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "arbitrary",
- "backtrace",
- "bolero",
- "borsh",
- "lazy_static",
- "schemars",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "object"
 version = "0.31.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -528,6 +513,21 @@ dependencies = [
  "indexmap",
  "toml_datetime",
  "winnow",
+]
+
+[[package]]
+name = "unc-account-id"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "arbitrary",
+ "backtrace",
+ "bolero",
+ "borsh",
+ "lazy_static",
+ "schemars",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

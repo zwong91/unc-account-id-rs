@@ -15,7 +15,7 @@ use crate::{AccountId, ParseAccountError};
 ///
 /// # Examples
 /// ```
-/// use near_account_id::{AccountId, AccountIdRef};
+/// use unc_account_id::{AccountId, AccountIdRef};
 /// use std::convert::{TryFrom, TryInto};
 ///
 /// // Construction
@@ -78,7 +78,7 @@ impl AccountIdRef {
     /// Construct a [`&AccountIdRef`](AccountIdRef) from with validation at compile time.
     /// This constructor will panic if validation fails.
     /// ```rust
-    /// use near_account_id::AccountIdRef;
+    /// use unc_account_id::AccountIdRef;
     /// const ALICE: &AccountIdRef = AccountIdRef::new_or_panic("alice.near");
     /// ```
     pub const fn new_or_panic(id: &str) -> &Self {
@@ -114,7 +114,7 @@ impl AccountIdRef {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::AccountIdRef;
+    /// use unc_account_id::AccountIdRef;
     ///
     /// let carol = AccountIdRef::new("carol.near").unwrap();
     /// assert_eq!("carol.near", carol.as_str());
@@ -130,7 +130,7 @@ impl AccountIdRef {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::AccountIdRef;
+    /// use unc_account_id::AccountIdRef;
     ///
     /// let near_tla = AccountIdRef::new("near").unwrap();
     /// assert!(near_tla.is_top_level());
@@ -150,7 +150,7 @@ impl AccountIdRef {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::AccountId;
+    /// use unc_account_id::AccountId;
     ///
     /// let near_tla: AccountId = "near".parse().unwrap();
     /// assert!(near_tla.is_top_level());
@@ -181,7 +181,7 @@ impl AccountIdRef {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::{AccountId, AccountType};
+    /// use unc_account_id::{AccountId, AccountType};
     ///
     /// let alice: AccountId = "alice.near".parse().unwrap();
     /// assert!(alice.get_account_type() == AccountType::NamedAccount);
@@ -213,7 +213,7 @@ impl AccountIdRef {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::AccountId;
+    /// use unc_account_id::AccountId;
     ///
     /// let alice: AccountId = "alice.near".parse().unwrap();
     /// assert!(!alice.is_system());
@@ -234,7 +234,7 @@ impl AccountIdRef {
     ///
     /// ## Examples
     /// ```
-    /// use near_account_id::AccountIdRef;
+    /// use unc_account_id::AccountIdRef;
     ///
     /// let alice: &AccountIdRef = AccountIdRef::new_or_panic("alice.near");
     /// let parent: &AccountIdRef = alice.get_parent_account_id().unwrap();
@@ -460,7 +460,7 @@ mod tests {
             json_schema,
             serde_json::json!({
                     "$schema": "http://json-schema.org/draft-07/schema#",
-                    "description": "Account identifier. This is the human readable UTF-8 string which is used internally to index accounts on the network and their respective state.\n\nThis is the \"referenced\" version of the account ID. It is to [`AccountId`] what [`str`] is to [`String`], and works quite similarly to [`Path`]. Like with [`str`] and [`Path`], you can't have a value of type `AccountIdRef`, but you can have a reference like `&AccountIdRef` or `&mut AccountIdRef`.\n\nThis type supports zero-copy deserialization offered by [`serde`](https://docs.rs/serde/), but cannot do the same for [`borsh`](https://docs.rs/borsh/) since the latter does not support zero-copy.\n\n# Examples ``` use near_account_id::{AccountId, AccountIdRef}; use std::convert::{TryFrom, TryInto};\n\n// Construction let alice = AccountIdRef::new(\"alice.near\").unwrap(); assert!(AccountIdRef::new(\"invalid.\").is_err()); ```\n\n[`FromStr`]: std::str::FromStr [`Path`]: std::path::Path",
+                    "description": "Account identifier. This is the human readable UTF-8 string which is used internally to index accounts on the network and their respective state.\n\nThis is the \"referenced\" version of the account ID. It is to [`AccountId`] what [`str`] is to [`String`], and works quite similarly to [`Path`]. Like with [`str`] and [`Path`], you can't have a value of type `AccountIdRef`, but you can have a reference like `&AccountIdRef` or `&mut AccountIdRef`.\n\nThis type supports zero-copy deserialization offered by [`serde`](https://docs.rs/serde/), but cannot do the same for [`borsh`](https://docs.rs/borsh/) since the latter does not support zero-copy.\n\n# Examples ``` use unc_account_id::{AccountId, AccountIdRef}; use std::convert::{TryFrom, TryInto};\n\n// Construction let alice = AccountIdRef::new(\"alice.near\").unwrap(); assert!(AccountIdRef::new(\"invalid.\").is_err()); ```\n\n[`FromStr`]: std::str::FromStr [`Path`]: std::path::Path",
                     "title": "AccountIdRef",
                     "type": "string"
                 }

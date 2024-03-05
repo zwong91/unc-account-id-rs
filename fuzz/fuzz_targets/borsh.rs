@@ -2,7 +2,7 @@
 
 use borsh::{BorshDeserialize, BorshSerialize};
 use libfuzzer_sys::fuzz_target;
-use near_account_id::AccountId;
+use unc_account_id::AccountId;
 
 fuzz_target!(|bytes: &[u8]| {
     if let Ok(account_id) = AccountId::try_from_slice(bytes) {

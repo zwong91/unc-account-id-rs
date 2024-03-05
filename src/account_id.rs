@@ -13,7 +13,7 @@ use crate::{AccountIdRef, ParseAccountError};
 /// ## Examples
 ///
 /// ```
-/// use near_account_id::AccountId;
+/// use unc_account_id::AccountId;
 ///
 /// let alice: AccountId = "alice.near".parse().unwrap();
 ///
@@ -44,7 +44,7 @@ impl AccountId {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::AccountId;
+    /// use unc_account_id::AccountId;
     ///
     /// let alice = AccountId::new_unvalidated("alice.near".to_string());
     /// assert!(AccountId::validate(alice.as_str()).is_ok());
@@ -63,7 +63,7 @@ impl AccountId {
     /// ## Examples
     ///
     /// ```
-    /// use near_account_id::{AccountId, ParseErrorKind};
+    /// use unc_account_id::{AccountId, ParseErrorKind};
     ///
     /// assert!(AccountId::validate("alice.near").is_ok());
     ///
@@ -82,7 +82,7 @@ impl AccountId {
     /// ### Examples
     ///
     /// ```
-    /// use near_account_id::{AccountId, ParseErrorKind};
+    /// use unc_account_id::{AccountId, ParseErrorKind};
     ///
     /// assert!(
     ///   matches!(
@@ -383,7 +383,7 @@ mod tests {
             json_schema,
             serde_json::json!({
                     "$schema": "http://json-schema.org/draft-07/schema#",
-                    "description": "NEAR Account Identifier.\n\nThis is a unique, syntactically valid, human-readable account identifier on the NEAR network.\n\n[See the crate-level docs for information about validation.](index.html#account-id-rules)\n\nAlso see [Error kind precedence](AccountId#error-kind-precedence).\n\n## Examples\n\n``` use near_account_id::AccountId;\n\nlet alice: AccountId = \"alice.near\".parse().unwrap();\n\nassert!(\"ƒelicia.near\".parse::<AccountId>().is_err()); // (ƒ is not f) ```",
+                    "description": "NEAR Account Identifier.\n\nThis is a unique, syntactically valid, human-readable account identifier on the NEAR network.\n\n[See the crate-level docs for information about validation.](index.html#account-id-rules)\n\nAlso see [Error kind precedence](AccountId#error-kind-precedence).\n\n## Examples\n\n``` use unc_account_id::AccountId;\n\nlet alice: AccountId = \"alice.near\".parse().unwrap();\n\nassert!(\"ƒelicia.near\".parse::<AccountId>().is_err()); // (ƒ is not f) ```",
                     "title": "AccountId",
                     "type": "string"
                 }
